@@ -1,0 +1,109 @@
+.calculator {
+  --bg: #1b1d22;
+  --panel: #24262d;
+  --key: #2e313a;
+  --key-hover: #383b46;
+  --func: #494d59;
+  --func-hover: #565a68;
+  --op: #e2a23b;
+  --op-hover: #edb151;
+  --op-text: #241705;
+  --ink: #f2f1ec;
+  --ink-dim: #8b8d96;
+
+  width: min(360px, 92vw);
+  margin: 6vh auto;
+  background: var(--panel);
+  border-radius: 28px;
+  padding: 20px 18px 24px;
+  box-shadow:
+    0 30px 60px -20px rgba(0, 0, 0, 0.6),
+    0 1px 0 rgba(255, 255, 255, 0.04) inset;
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', 'SFMono-Regular', Menlo, monospace;
+}
+
+.screen {
+  background: var(--bg);
+  border-radius: 18px;
+  padding: 22px 18px 16px;
+  margin-bottom: 16px;
+  text-align: right;
+  overflow: hidden;
+}
+
+.expression {
+  color: var(--ink-dim);
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  min-height: 1.1em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.display {
+  color: var(--ink);
+  font-size: clamp(2rem, 9vw, 2.75rem);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.15;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+  margin-top: 4px;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.key {
+  border: none;
+  border-radius: 14px;
+  background: var(--key);
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 1.15rem;
+  font-weight: 500;
+  padding: 16px 0;
+  cursor: pointer;
+  transition: background 0.12s ease, transform 0.06s ease;
+}
+
+.key:hover { background: var(--key-hover); }
+.key:active { transform: scale(0.96); }
+
+.key:focus-visible {
+  outline: 2px solid var(--op);
+  outline-offset: 2px;
+}
+
+.key--func {
+  background: var(--func);
+  color: var(--ink);
+  font-size: 1rem;
+}
+.key--func:hover { background: var(--func-hover); }
+
+.key--op {
+  background: var(--op);
+  color: var(--op-text);
+  font-weight: 600;
+}
+.key--op:hover { background: var(--op-hover); }
+.key--op.is-active {
+  background: var(--ink);
+  color: var(--op-text);
+}
+
+.key--equals {
+  background: var(--op);
+  color: var(--op-text);
+  font-weight: 700;
+}
+.key--equals:hover { background: var(--op-hover); }
+
+@media (prefers-reduced-motion: reduce) {
+  .key { transition: none; }
+}
