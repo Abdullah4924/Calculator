@@ -12,6 +12,6 @@ jobs:
 
     steps:
       - name:  checkout
-        uses: action/checkout@v3
+        uses: actions/checkout@v4.4.0
       - name: json to file
         uses: devops-actions/json-to-file@v1.0.7
