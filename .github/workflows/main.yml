@@ -1,0 +1,17 @@
+name: workspace
+
+on:
+  push:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name:  checkout
+        uses: action/checkout@v3
+      - name: json to file
+        uses: devops-actions/json-to-file@v1.0.7
