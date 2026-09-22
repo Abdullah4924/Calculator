@@ -13,5 +13,5 @@ jobs:
     steps:
       - name:  checkout
         uses: actions/checkout@v4.4.0
-      - name: json to file
-        uses: devops-actions/json-to-file@v1.0.7
+      - name: Setup React
+        uses: uses: kirkeaton/setup-react@v1.0.5
