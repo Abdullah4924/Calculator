@@ -14,4 +14,4 @@ jobs:
       - name:  checkout
         uses: actions/checkout@v4.4.0
       - name: Setup React
-        uses: uses: kirkeaton/setup-react@v1.0.5
+        uses: kirkeaton/setup-react@v1.0.5
